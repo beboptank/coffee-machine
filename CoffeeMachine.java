@@ -2,6 +2,24 @@ package machine;
 import java.util.*;
 
 public class CoffeeMachine {
+
+    private Scanner scanner;
+
+    private int water;
+    private int milk;
+    private int coffeeBeans;
+    private int cups;
+    private int money;
+
+    private CoffeeMachine() {
+        this.scanner = new Scanner(System.in);
+        this.water = 400;
+        this.milk = 540;
+        this.coffeeBeans = 120;
+        this.cups = 9;
+        this.money = 550;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String userAction = scanner.nextLine();
