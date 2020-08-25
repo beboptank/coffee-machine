@@ -20,6 +20,16 @@ public class CoffeeMachine {
         this.money = 550;
     }
 
+    public void printState() {
+        System.out.println("The coffee machine has:\n" +
+                String.format("%d of water\n", this.water) +
+                String.format("%d of milk\n", this.milk) +
+                String.format("%d of coffee beans\n", this.coffeeBeans) +
+                String.format("%d of disposable cups\n", this.cups) +
+                String.format("%d of money", this.money)
+                );
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String userAction = scanner.nextLine();
