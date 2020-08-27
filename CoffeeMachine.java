@@ -20,6 +20,21 @@ public class CoffeeMachine {
         this.money = 550;
     }
 
+    private void buy() {
+        System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:");
+        String command = this.scanner.nextLine();
+
+        if (command.equals("back")) {
+            return;
+        }
+
+        this.buy(Integer.valueOf(command));
+    }
+
+    private void fill() {
+
+    }
+
     public void printState() {
         System.out.println("The coffee machine has:\n" +
                 String.format("%d of water\n", this.water) +
@@ -44,10 +59,8 @@ public class CoffeeMachine {
 
             switch (userAction) {
                 case "buy":
-                    System.out.println();
-                    System.out.print("What do you want to buy?");
-                    System.out.println(" 1 - espresso, 2 - latte, 3 - cappuccino:");
-                    String userOrder = scanner.nextLine();
+                    this.buy();
+                    break;
 
                     switch (userOrder) {
                         case "1":
@@ -161,7 +174,7 @@ public class CoffeeMachine {
                     System.out.println(coffeeBeans + " of coffee beans");
                     System.out.println(cups + " of disposable cups");
                     System.out.println(money + " of money");
-
+    
                     System.out.println();
                     System.out.println("Write action (buy, fill, take, remaining, exit):");
                     userAction = scanner.nextLine();
